@@ -1,0 +1,39 @@
+.blog_card{
+    cursor: pointer;
+    transition: transform 0.2s;
+    border-radius: 10px;
+    height: 100%;
+    &:hover{
+      transform: scale(1.03);
+    }
+    .topic_box{
+      margin-top:-2rem;
+      position: relative;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.2rem;
+      margin-bottom: 0.8rem;
+      width: max-content;
+      background:#1976d2;
+    }
+    .post_title {
+      line-height: 1.2 !important;
+      font-weight: 700 !important;
+      text-transform: capitalize;
+      line-height: 1.2;
+      font-family: "Urbanist", serif !important;
+    } 
+    .user_icon{
+      .comment_icon{
+        border: 3px solid #ffffff;
+        width: 25px;
+        height: 25px;
+      }
+      & div:nth-child(2) {
+        transform: translateX(-40px);
+      }
+      & div:nth-child(3) {
+        transform: translateX(-80px);
+      }
+    }
+
+  }

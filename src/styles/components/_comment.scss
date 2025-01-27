@@ -1,0 +1,13 @@
+.comment-container {
+  padding: 0.5rem;
+  border-top: 1px solid #ddd;
+
+  &.reply {
+    margin-left: 1rem;
+  }
+
+  .comment-text {
+    font-size: 0.875rem;
+    color: #555;
+  }
+}

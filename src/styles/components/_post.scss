@@ -1,0 +1,15 @@
+.post-container {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+
+  .post-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-content {
+    font-size: 1rem;
+    color: #333;
+  }
+}

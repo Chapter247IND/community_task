@@ -1,0 +1,15 @@
+@import "./components/_comment";
+@import "./components/_post";
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  font-family: "Urbanist", serif !important;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+body :where(h1, h2, h3, h4, h5, h6, p, a, label) {
+  font-family: "Urbanist", serif !important;
+}
+
+
+
