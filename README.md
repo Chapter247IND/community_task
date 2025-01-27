@@ -36,7 +36,7 @@ A React-based blog community application that allows users to create, read, upda
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/community_test.git
+git clone https://github.com/yourusername/community_task.git
 ```
 
 2.Install pnpm (optional) (npm can be also used to initialize and start project)
