@@ -1,101 +1,98 @@
 .featured_image {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  img {
     width: 100%;
-    margin-bottom: 2rem;
+    height: 100%;
+    object-fit: cover;
     border-radius: 8px;
-    img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-  }  
-  .post_title {
-    line-height: 1.2 !important;
-    font-weight: 700 !important;
-    text-transform: capitalize;
-    line-height: 1.2;
-    font-family: "Urbanist", serif !important;
-  }      
-  .comment_block {
-    margin-bottom: 20px;
-    position: relative;
-    &.remove_line{
-      ::before{
-        display: none;
-      }
-    }
-    .comment_icon{
-      margin-right: 10px;
-      width: 30px;
-      height: 30px;
-    }
-    ul {
-      .comment_block {
-        margin-bottom: 0;
-        margin-left: 10px;
-        padding-left: 20px;
-        position: relative;
-        .comment_view_btn{
-          left: 22px;
-        }
-        &::before {
-          left: 34px;
-        }
-        &::after{
-          content: '';
-          display: block;
-          border-top: 1px solid rgba(0, 0, 0, 0.1019607843);
-          width: 30px;
-          height: 10px;
-          position: absolute;
-          left: -9px;
-          top: 15px;
-        }
-      }
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      width: 1px;
-      height: calc(100% - 25px);
-      background-color: #0000001a;
-      left: 15px;
-      top: 15px;
-    }
-   
-    .comment_view_btn{
-      position: relative;
-      cursor: pointer;
-      background-color: #ffffff;
-      display: flex;
-      width: 25px;
-      height: 25px;
-      position: absolute;
-      left: 3px;
-      bottom: 0px;
-      z-index: 1;
-      border-radius:50%;
-    }
-    .semi_round_circle{
-      display: flex;
-      width: 30px;
-      height: 30px;
-      border-bottom-left-radius: 50px;
-      border: 1px solid #ddd;
-      position: absolute;
-      left: 15px;
-      &::after {
-        content: '';
-        position: relative;
-        width: 32px; 
-        height: 32px; 
-        bottom: 3px;
-        background-color: white;
-        border-bottom-left-radius: 50px;
-      }
-    }
-    & + .comment_block {
-      margin: 0;
-    }
-   
   }
+}
+.post_title {
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  text-transform: capitalize;
+  font-family: "Urbanist", serif !important;
+}
+.comment_block {
+  margin-bottom: 20px;
+  position: relative;
+  .comment_icon {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  ul {
+    .comment_block {
+      margin-bottom: 0;
+      margin-left: 10px;
+      padding-left: 20px;
+      position: relative;
+      // .comment_view_btn {
+      // left: 22px;
+      // }
+      &::before {
+        left: 34px;
+      }
+      &::after {
+        content: "";
+        display: block;
+        border-top: 1px solid rgba(0, 0, 0, 0.1019607843);
+        width: 30px;
+        height: 10px;
+        position: absolute;
+        left: -9px;
+        top: 15px;
+      }
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: calc(100% - 25px);
+    background-color: #0000001a;
+    left: 15px;
+    top: 15px;
+  }
+
+  .comment_view_btn {
+    position: relative;
+    cursor: pointer;
+    background-color: #ffffff;
+    display: flex;
+    width: 25px;
+    height: 25px;
+    left: 3px;
+    bottom: 0px;
+    z-index: 1;
+    border-radius: 50%;
+  }
+  .semi_round_circle {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-bottom-left-radius: 50px;
+    border: 1px solid #ddd;
+    position: absolute;
+    left: 15px;
+    &::after {
+      content: "";
+      position: relative;
+      width: 32px;
+      height: 32px;
+      bottom: 3px;
+      background-color: white;
+      border-bottom-left-radius: 50px;
+    }
+  }
+  & + .comment_block {
+    margin: 0;
+  }
+  &.remove_line {
+    &::before {
+      display: none;
+    }
+  }
+}

@@ -83,23 +83,25 @@ const BlogCard: React.FC<BlogCardType> = ({
             )}
           </Box>
 
-          <Box>
+          <Box sx={{ display: "flex", gap: "8px" }}>
             <IconButton
               onClick={(e) => {
                 e.stopPropagation();
                 handleEditPost(post?.id);
               }}
               sx={(theme: Theme) => ({
-                color: theme.palette.primary.dark,
+                backgroundColor: theme.palette.primary.dark,
               })}
+              className={Styles.action_icon}
             >
               <EditIcon />
             </IconButton>
 
             <IconButton
               sx={(theme: Theme) => ({
-                color: theme.palette.error.dark,
+                backgroundColor: theme.palette.error.dark,
               })}
+              className={Styles.action_icon}
               onClick={(e) => {
                 e.stopPropagation();
                 deletePost(post?.id);

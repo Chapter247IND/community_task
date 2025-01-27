@@ -11,14 +11,13 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SendIcon from "@mui/icons-material/Send";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import { CommentType } from "@/types";
 import CommentList from "./CommentList";
 import PersonIcon from "@mui/icons-material/Person";
-import ClearIcon from '@mui/icons-material/Clear';
+import ClearIcon from "@mui/icons-material/Clear";
 import Styles from "@/components/PostPage/postPage.module.scss";
-
 
 interface CommentProps {
   comment: CommentType;
@@ -27,9 +26,9 @@ interface CommentProps {
 }
 
 // Separate components for better organization
-const CommentHeader: React.FC<{ 
-  commentId: number, 
-  onDelete: (id: number) => void 
+const CommentHeader: React.FC<{
+  commentId: number;
+  onDelete: (id: number) => void;
 }> = ({ commentId, onDelete }) => (
   <Stack direction="row">
     <Typography
@@ -40,10 +39,10 @@ const CommentHeader: React.FC<{
     >
       John Make
     </Typography>
-    <Box sx={{ position: 'relative', top: '-3px', marginLeft: '10px' }}>
+    <Box sx={{ position: "relative", top: "-3px", marginLeft: "10px" }}>
       <DeleteIcon
         color="action"
-        sx={{ width: '15px', cursor: 'pointer' }}
+        sx={{ width: "15px", cursor: "pointer" }}
         onClick={() => onDelete(commentId)}
       />
     </Box>
@@ -66,15 +65,15 @@ const ReplyButton: React.FC<{ onClick: () => void }> = ({ onClick }) => (
 );
 
 const ReplyForm: React.FC<{
-  replyText: string,
-  setReplyText: (text: string) => void,
-  onSubmit: () => void,
-  onClose: () => void
+  replyText: string;
+  setReplyText: (text: string) => void;
+  onSubmit: () => void;
+  onClose: () => void;
 }> = ({ replyText, setReplyText, onSubmit, onClose }) => (
-  <Stack  
-    direction="row" 
-    spacing={3} 
-    sx={{ paddingLeft: "40px", paddingTop: "15px", alignItems: 'center' }}
+  <Stack
+    direction="row"
+    spacing={3}
+    sx={{ paddingLeft: "40px", paddingTop: "15px", alignItems: "center" }}
   >
     <TextField
       label="Reply"
@@ -92,10 +91,10 @@ const ReplyForm: React.FC<{
           ),
         },
       }}
-      sx={{ backgroundColor: '#fff' }}
+      sx={{ backgroundColor: "#fff" }}
     />
     <IconButton onClick={onClose}>
-      <ClearIcon sx={{ color: 'red' }} />
+      <ClearIcon sx={{ color: "red" }} />
     </IconButton>
   </Stack>
 );
@@ -118,9 +117,14 @@ const Comment: React.FC<CommentProps> = ({ comment, onReply, onDelete }) => {
   const hasReplies = comment.replies && comment.replies.length > 0;
 
   return (
-    <div className={`${Styles.comment_block} ${!hasReplies ? 'remove_line' : ''}`}>
-      <Stack direction="row" sx={{alignItems: 'center', justifyContent: 'space-between'}}>
-        <Stack direction="row" sx={{ alignItems: 'start' }}>
+    <div
+      className={`${Styles.comment_block} ${!hasReplies ? Styles.remove_line : ""}`}
+    >
+      <Stack
+        direction="row"
+        sx={{ alignItems: "center", justifyContent: "space-between" }}
+      >
+        <Stack direction="row" sx={{ alignItems: "start" }}>
           <Avatar className={Styles.comment_icon}>
             <PersonIcon sx={{ width: "15px", height: "15px" }} />
           </Avatar>
@@ -153,14 +157,20 @@ const Comment: React.FC<CommentProps> = ({ comment, onReply, onDelete }) => {
             onClick={() => setIsRepliesVisible(!isRepliesVisible)}
             className={Styles.comment_view_btn}
           >
-            {isRepliesVisible 
-              ? <RemoveCircleOutlineIcon sx={{ fill: '#bdbdbd' }} />
-              : <AddCircleOutlineIcon sx={{ fill: '#bdbdbd' }} />
-            }
+            {isRepliesVisible ? (
+              <RemoveCircleOutlineIcon sx={{ fill: "#bdbdbd" }} />
+            ) : (
+              <AddCircleOutlineIcon sx={{ fill: "#bdbdbd" }} />
+            )}
           </Box>
 
-          <Box sx={{ position: 'relative' }}>
-            <Box sx={{ height: isRepliesVisible ? '100%' : '0px', overflow: 'hidden' }}>
+          <Box sx={{ position: "relative" }}>
+            <Box
+              sx={{
+                height: isRepliesVisible ? "100%" : "0px",
+                overflow: "hidden",
+              }}
+            >
               <CommentList
                 comments={comment.replies ?? []}
                 onReply={onReply}
