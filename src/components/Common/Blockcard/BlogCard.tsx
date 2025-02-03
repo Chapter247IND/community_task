@@ -50,7 +50,7 @@ const BlogCard: React.FC<BlogCardType> = ({
         </Box>
         <Box sx={{ minHeight: "60px" }}>
           <Typography variant="body2" color="text.secondary">
-            {post?.content.length > 90
+            {post?.content?.length > 90
               ? post.content.substring(0, 95) + "..."
               : post.content}
           </Typography>
